@@ -38,10 +38,6 @@ for item in pil_image_list:
     cv2_image_list.append(open_cv_image)
 
 # selecting a rendom image
-ran_img = random.choice(cv2_image_list)
-
-plt.imshow(ran_img)
-
 ran_img2 = random.choice(cv2_image_list)
 
 plt.imshow(ran_img2)
@@ -68,11 +64,11 @@ norm_image = (ran_img_resize - np.min(ran_img_resize)) / (np.max(ran_img_resize)
 plt.imshow(norm_image, cmap = "gray")
 
 # brightness increase
-ran_image_bright = cv2.convertScaleAbs(norm_image, alpha=1, beta=10)
-plt.imshow(ran_image_bright, cmap = "gray")
+#ran_image_bright = cv2.convertScaleAbs(norm_image, alpha=1, beta=10)
+#plt.imshow(ran_image_bright, cmap = "gray")
 
 # laplacian gaussian transform
-ran_img_transform = cv2.GaussianBlur(ran_image_bright,(5,5),0)
+ran_img_transform = cv2.GaussianBlur(norm_image,(5,5),0)
 plt.imshow(ran_img_transform, cmap = "gray")
 
 # flipped and rotated image
@@ -81,19 +77,15 @@ ran_img_flip = cv2.flip(ran_img_flip, 1)
 
 
 # plotting
-f, axes = plt.subplots(nrows = 3, ncols = 2, figsize=(12, 12))
+f, axes = plt.subplots(nrows = 2, ncols = 2, figsize=(12, 12))
 axes[0, 0].imshow(ran_img2)
 axes[0, 0].set_title('1. Original')
 axes[0, 1].imshow(ran_img_resize, cmap = "gray")
 axes[0, 1].set_title('2. Grayscale/Resized Image')
-axes[1, 0].imshow(norm_image, cmap = "gray")
-axes[1, 0].set_title('3. Normalized Image')
-axes[1, 1].imshow(ran_image_bright, cmap = "gray")
-axes[1, 1].set_title('4. Normalized/Bright Image')
-axes[2, 0].imshow(ran_img_transform, cmap = "gray")
-axes[2, 0].set_title('5. Gaussian Transformed Image')
-axes[2, 1].imshow(ran_img_flip, cmap = "gray")
-axes[2, 1].set_title('6. Flipped/Rotated Image')
+axes[1, 0].imshow(ran_img_transform, cmap = "gray")
+axes[1, 0].set_title('3. Normalized/Gaussian Transformed Image')
+axes[1, 1].imshow(ran_img_flip, cmap = "gray")
+axes[1, 1].set_title('4. Flipped/Rotated Image')
 
 
 

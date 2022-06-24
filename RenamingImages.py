@@ -8,7 +8,7 @@ Created on Wed Jun 22 21:54:03 2022
 
 import os
 
-root = "/Users/claregarberg/Documents/Graduate School/Summer 2022/Image Analytics/Project/Images"
+root = "/Users/claregarberg/Documents/Graduate School/Summer 2022/Image Analytics/ANLY677_FinalProject/Images"
 
 os.chdir(root)
 
