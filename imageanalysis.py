@@ -68,7 +68,7 @@ norm_image = (ran_img_resize - np.min(ran_img_resize)) / (np.max(ran_img_resize)
 plt.imshow(norm_image, cmap = "gray")
 
 # brightness increase
-ran_image_bright = cv2.convertScaleAbs(norm_image, alpha=1, beta=0)
+ran_image_bright = cv2.convertScaleAbs(norm_image, alpha=1, beta=10)
 plt.imshow(ran_image_bright, cmap = "gray")
 
 # laplacian gaussian transform
