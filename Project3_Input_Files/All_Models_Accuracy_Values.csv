@@ -1,0 +1,4 @@
+﻿Architecture,Top-1 accuracy (%),Top-5 accuracy (%)
+VGG 13,27.3,50
+VGG 16,18.18,40.91
+VGG 19 ,36.36,63.64
