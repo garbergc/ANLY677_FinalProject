@@ -1,0 +1,7 @@
+﻿Architecture,Top-1 accuracy (%),Top-5 accuracy (%)
+VGG 13,27.3,50
+VGG 16,18.2,50
+VGG 19 ,27.3,54.5
+ResNet18,4.55,18.18
+ResNet34,4.55,27.27
+ResNet50,4.55,27.23
